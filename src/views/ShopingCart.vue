@@ -181,10 +181,17 @@ export default {
     };
   },
   methods: {
-    removeItem(index) {
+    removeItem(idx) {
+
+      let keranjangUserStorage = JSON.parse(localStorage.getItem("keranjangUser"));
+      let itemKeranjangUserStorage = keranjangUserStorage.map(itemKeranjangUserStorage => itemKeranjangUserStorage.id);
+
+      let index = itemKeranjangUserStorage.findIndex(id => id == idx);
       this.keranjangUser.splice(index, 1);
+     
       const parsed = JSON.stringify(this.keranjangUser);
       localStorage.setItem("keranjangUser", parsed);
+      window.location.reload();
     
     },
    // fungsi mengirim data ke API

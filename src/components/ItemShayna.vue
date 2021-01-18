@@ -40,7 +40,7 @@
                   <h5>{{ itemProduct.name }}</h5>
                 </router-link>
                 <div class="product-price">
-                  ${{ itemProduct.price }}
+                  ${{ itemProduct.price }}.00
                   <span>$35.00</span>
                 </div>
               </div>
